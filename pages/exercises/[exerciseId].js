@@ -1,4 +1,5 @@
-import {useRouter} from 'next/router'
+import {useRouter} from 'next/router';
+
 const exerciseDetail = () => {
     const router = useRouter();
     const exerciseId = router.query.exerciseId;
