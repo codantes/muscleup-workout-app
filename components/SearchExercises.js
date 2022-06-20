@@ -2,6 +2,7 @@ import { Grid, GridItem, VStack ,HStack, FormControl, Input, Button, Box, Text, 
 import {useState} from 'react'
 import { options, fetchData } from "../utils/fetchData"
 import Link from 'next/link'
+import ExerciseCard from './ExerciseCard'
 
 const SearchExercise = () => {
     const [search, setSearch] = useState('')
@@ -10,12 +11,11 @@ const SearchExercise = () => {
     const handleSearch = async () => {
         if(search){
             const exerciseData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', options)
-            console.log(exerciseData)
-
+            
             const searchedExercises = exerciseData.filter( (exercise) => exercise.name.toLowerCase().includes(search)
             ||exercise.target.toLowerCase().includes(search)
             ||exercise.equipment.toLowerCase().includes(search)
-            ||exercise.bodyPart.toLowerCase().includes(search) )
+            ||exercise.bodyPart.toLowerCase().includes(search) );
             setSearch('')
             setExercises(searchedExercises)
         }
@@ -61,23 +61,11 @@ const SearchExercise = () => {
                         <GridItem
                          key={exercise.id}
                         >
-                            <Box
-                                 boxShadow="lg" 
-                                 p='0.5rem'
-                                 m='1rem' 
-                                 rounded="md" 
-                                 bg="white"
-                            >
-                                <Image 
-                                    src={exercise.gifUrl}
-                                />
-                                <Text
-                                    textAlign='center'
-                                    m='0.3rem'
-                                >
-                                    {exercise.name}
-                                </Text>
-                            </Box>
+                            <ExerciseCard
+                                name={exercise.name}
+                                id={exercise.id}
+                                gifUrl={exercise.gifUrl}
+                            />
                         </GridItem>
                         )
                     })
