@@ -6,9 +6,14 @@ const ExerciseCard = ({gifUrl, name, id}) => {
         <Box
         boxShadow="lg" 
         p='0.5rem'
-        m='1rem' 
+        h='320px'
         rounded="md" 
         bg="white"
+        display='flex'
+        flexDirection='column'
+        textAlign='center'
+        alignItems='center'
+        justifyContent='center'
         >
             <Image 
             src={gifUrl}
@@ -22,7 +27,9 @@ const ExerciseCard = ({gifUrl, name, id}) => {
             <Link
             href={'/exercises/' + id}
             >
-                <Button>Show more</Button>
+                <Button
+                    mx='auto'
+                >Show more</Button>
             </Link>
         </Box>
      );

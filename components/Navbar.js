@@ -6,6 +6,7 @@ const Navbar = () => {
         display='flex'
         justifyContent='space-between'
         py='1rem'
+        w='100%'
         px={['1.5rem', '1.5rem','3rem', '3rem']}
         >
             <Image 
@@ -13,8 +14,24 @@ const Navbar = () => {
                 h={['40px', '40px', '60px', '60px']}
             />
             <HStack>
-                <Link href='/body-part'>muscles</Link>
-                <Link href='/exercises'>exercises</Link>
+                <Link href='/body-part'>
+                    <Text
+                        color='yellow.400'
+                        fontSize='18px'
+                        fontWeight='semibold'
+                    >
+                        workout
+                    </Text>
+                </Link>
+                <Link href='/exercises'>
+                    <Text
+                        color='yellow.400'
+                        fontSize='18px'
+                        fontWeight='semibold'
+                    >
+                        exercises
+                    </Text>
+                </Link>
             </HStack>
         </HStack>
      );
