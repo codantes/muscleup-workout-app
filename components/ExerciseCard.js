@@ -6,7 +6,7 @@ const ExerciseCard = ({gifUrl, name, id}) => {
         <Box
         boxShadow="lg" 
         p='0.5rem'
-        w={['75%', '75%', '100%', '100%']}
+        w={['75%', '100%', '100%', '100%']}
         h='320px'
         rounded="md" 
         bg="white"
